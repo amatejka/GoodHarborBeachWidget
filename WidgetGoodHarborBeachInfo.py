@@ -135,8 +135,8 @@ if (tidesoup.find("td", attrs={"class":"tide-table__part tide-table__part--moon 
     moonrise = moonrise[-7:]
     moonrise = moonrise.replace(" ", "")
 moonset = ""
-if (tidesoup.find("td", attrs={"class":"tide-table__part tide-table__part--moon"})):
-    moonset = (tidesoup.find("td", attrs={"class":"tide-table__part tide-table__part--moon"})).text
+if (tidesoup.find("td", attrs={"class":"tide-table__part tide-table__part--moon tide-table__part--last-shadow"})):
+    moonset = (tidesoup.find("td", attrs={"class":"tide-table__part tide-table__part--moon tide-table__part--last-shadow"})).text
     if (moonphase == ""):
         match = re.search(r'\((.*?)\)', moonset)
         moonphase = match.group(1)
